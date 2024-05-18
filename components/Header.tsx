@@ -1,4 +1,5 @@
 // components/Header.tsx
+"use client";
 import React from 'react';
 import { ConnectButton } from '@mysten/dapp-kit';
 
