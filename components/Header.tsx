@@ -1,17 +1,25 @@
 // components/Header.tsx
 "use client";
-
+import Image from 'next/image';
+import Link from 'next/link';
 import React from 'react';
-import WalletButton from './WalletButton';
+import { ConnectButton } from '@mysten/dapp-kit';
 
 const Header = () => {
   return (
-    <header className="bg-gray-800 p-4 text-white flex justify-between items-center fixed top-0 left-0 right-0 z-10">
-      <h1 className="text-xl">Pugs That Fud</h1>
-      <WalletButton />
-    </header>
+    <div id='header' className='flex items-center justify-between w-full p-4'>
+    <Link href='/'>
+      <Image
+        className='w-20 sm:w-20'
+        width={150}
+        height={150}
+        src='/logo.png'
+        alt=''
+      />
+    </Link>
+    <ConnectButton/>
+    </div>
   );
 };
 
 export default Header;
-
