@@ -5,7 +5,7 @@ import { createNetworkConfig, SuiClientProvider, WalletProvider } from '@mysten/
 import { getFullnodeUrl } from '@mysten/sui.js/client';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import React from 'react';
-import { customTheme } from './theme'; // Import custom theme
+// import { customTheme } from './theme';
 
 const { networkConfig } = createNetworkConfig({
   localnet: { url: getFullnodeUrl('localnet') },
@@ -17,7 +17,7 @@ const queryClient = new QueryClient();
 export const AppProviders = ({ children }: { children: React.ReactNode }) => (
   <QueryClientProvider client={queryClient}>
     <SuiClientProvider networks={networkConfig} defaultNetwork="localnet">
-      <WalletProvider theme={customTheme}> {/* Apply custom theme */}
+      <WalletProvider>
         {children}
       </WalletProvider>
     </SuiClientProvider>
